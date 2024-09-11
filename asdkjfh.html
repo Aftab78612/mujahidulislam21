@@ -1,0 +1,116 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* AI Chat Button */
+.ai-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    background-color: #5242ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* AI Chat Section */
+.chat-section {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 80px; /* Adjust the value as needed */
+    right: 20px;  /* Adjust the value as needed */
+    width: 300px; /* Adjust the size as needed */
+    height: 400px; /* Adjust the size as needed */
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #5242ff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chat-footer button {
+    padding: 10px 20px;
+    background-color: #5242ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Section</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Existing content -->
+
+    <!-- AI Chat Button -->
+    <div class="ai-section" id="aiButton">
+        <img src="chat-icon.png" alt="Chat Icon" width="50" height="50">
+    </div>
+
+    <!-- AI Chat Section -->
+    <div class="chat-section" id="chatSection">
+        <div class="chat-header">
+            <h2>AI Chat</h2>
+            <button id="closeChat">X</button>
+        </div>
+        <div class="chat-body">
+            <!-- Chat content goes here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

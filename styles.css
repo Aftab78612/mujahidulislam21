@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    background-color: #40A2E3;
+    padding: 10px 0;
+}
+
+.hamburger{
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0; /* Position at the top */
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 2000;
+    background-color: #40A2E3; /* Add background color to ensure it covers content behind it */
+}
+
+.yoga-position > img { 
+    align-items: center;
+    object-fit:cover; 
+    overflow: hidden;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+.sub-list {
+    display: none;
+    list-style-type: none;
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    background-color: #40A2E3; 
+    padding: 10px;
+    border: 1px solid #40A2E3; 
+    z-index: 1000;
+}
+.sub-list li {
+    display: block;
+    margin: 5px 0; /* Adds space between items */
+}
+.nav-links li:hover .sub-list {
+    display: block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    
+}
+
+.nav-links a:hover {
+    background-color: #3283ba;
+    border-radius: 5px;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.language-switch select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hamburger{
+        display: block;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f7f7f7;
+        padding: 20px;
+        z-index: 1000;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f7f7f7;
+    }
+
+    
+
+    .logo img {
+        height: 40px;
+    }
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.yoga-position {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: calc(25% - 40px); /* For four equal columns */
+    transition: transform 0.3s ease;
+}
+
+.yoga-position:hover {
+    transform: translateY(-10px);
+}
+
+.yoga-head p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .yoga-position {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .yoga-head p {
+        font-size: 1em;
+    }
+}
+
+
+.foot-panel{ 
+
+    background-color: #40A2E3;
+    color: white;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    word-wrap: break-word;
+}
+
+/* AI Chat Button */
+.ai-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    background-color: #5242ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* AI Chat Section */
+.chat-section {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 80px; /* Adjust the value as needed */
+    right: 20px;  /* Adjust the value as needed */
+    width: 300px; /* Adjust the size as needed */
+    height: 400px; /* Adjust the size as needed */
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #5242ff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chat-footer button {
+    padding: 10px 20px;
+    background-color: #5242ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.closeChat{
+    border-radius: 100px;
+    color: #5242ff;
+    
+}
+.box > img{
+    display: none;
+}
+
+
+.yoga-head{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.yoga-head>img{
+    margin: 0%;
+    padding: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.yoga-head > p {
+    position: absolute; /* Change from relative to absolute */
+    bottom: 0; /* Position it at the bottom */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Ensure it spans the full width */
+    text-align: center; /* Center the text horizontally */
+    z-index: 1;
+    color: #fff;
+    font-size: small;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional: Add a background for better readability */
+    padding: 10px; /* Optional: Add some padding */
+}
+
+
+/* Define keyframes for the text animation */
+@keyframes textAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the text */
+.intro-section > p {
+    position: absolute; /* Change from relative to absolute */
+    bottom: 0; /* Position it at the bottom */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Ensure it spans the full width */
+    text-align: center; /* Center the text horizontally */
+    z-index: 1;
+    color: #fff;
+    font-size: small;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional: Add a background for better readability */
+    padding: 10px; /* Optional: Add some padding */
+    animation: textAnimation 1.5s ease-in-out; /* Apply the animation */
+}
